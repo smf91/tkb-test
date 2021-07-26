@@ -10,10 +10,37 @@
   height: 52px;
 }
 
-.container {}
+.container {
+  margin: 0 auto;
+}
 
 .footer-main{
-  background: aquamarine;
+  background: #F5F7F8;
   margin-top: auto;
   height: 212px;
+  display: grid;
+  grid-template-rows: 1fr 1fr 1fr;
+  font-size: 14px;
+  font-family: Corpid E1s;
+  padding: 26px 12px;
+  
+
+
+
+  .info-phone {
+    font-style: normal;
+    font-weight: bold;
+    color: #3A444E;
+  }
+  .info-text {
+    font-style: normal;
+    font-weight: 350;
+    font-size: 12px;
+    color: #3A444E;
+  }
+  .info-company {
+    font-style: normal;
+    font-weight: 350;
+    color: #3A444E;
+}
 }
