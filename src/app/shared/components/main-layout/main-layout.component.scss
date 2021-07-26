@@ -1,0 +1,19 @@
+.main-container{
+  overflow: hidden;
+  display: grid;
+  grid-template-rows: auto 1fr auto ;
+  min-height: 100vh;
+}
+
+.navbar-main{
+  background-color: rgb(113, 122, 113);
+  height: 52px;
+}
+
+.container {}
+
+.footer-main{
+  background: aquamarine;
+  margin-top: auto;
+  height: 212px;
+}
