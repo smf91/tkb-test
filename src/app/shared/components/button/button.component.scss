@@ -1,0 +1,26 @@
+.custom-button{
+  width: 248px;
+  height: 52px;
+  background: #00B1AB;
+  border-radius: 42px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: Corpid E1s;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 19px;
+  color: #FFFFFF;
+  &:hover {
+  background: linear-gradient(180deg, #00B1AB 0%, #00827D 100%);
+  }
+  &:active {
+    transform: translateY(-1px);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  }
+}
+
+.custom-button.disabled {
+  background: #D0D5DB;
+}

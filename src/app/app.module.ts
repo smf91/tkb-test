@@ -6,13 +6,17 @@ import { AppComponent } from './app.component';
 import { LoginPageComponent } from './login-page/login-page.component';
 import { MainLayoutComponent } from './shared/components/main-layout/main-layout.component';
 import { InputComponentComponent } from './shared/components/input-component/input-component.component';
+import { ButtonComponent } from './shared/components/button/button.component';
+import { CheckboxComponent } from './shared/components/checkbox/checkbox.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginPageComponent,
     MainLayoutComponent,
-    InputComponentComponent
+    InputComponentComponent,
+    ButtonComponent,
+    CheckboxComponent
   ],
   imports: [
     BrowserModule,
