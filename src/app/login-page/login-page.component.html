@@ -1,5 +1,4 @@
-<h1>Проверка счета</h1>
-
+<h2>Проверка счета</h2>
 <div class="layot-form">
 <!-- toggler -->
   <div class="toggler"
@@ -24,7 +23,9 @@
         "
   >    
 <!-- бик -->
-    <mat-form-field class="example-full-width" appearance="fill" style="margin-bottom: 10px;">
+    <mat-form-field class="example-full-width" 
+                    appearance="fill" 
+                    style="margin-bottom: 10px;">
       <mat-label>БИК</mat-label>
       <input  matInput 
               [formControlName]="'bik'" 
@@ -37,7 +38,9 @@
       </mat-error>
     </mat-form-field>
 <!-- расчетны счет -->
-    <mat-form-field class="example-full-width" appearance="fill" style="margin-bottom: 10px;">
+    <mat-form-field class="example-full-width" 
+                    appearance="fill"
+                    style="margin-bottom: 10px;">
       <mat-label>Расчетный счет</mat-label>
       <input  matInput  
               [formControlName]="'account'" 
