@@ -1,4 +1,6 @@
+import { CustomValidators } from './../shared/custom.validators';
 import { Component, OnInit } from '@angular/core';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-login-page',
@@ -7,9 +9,36 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoginPageComponent implements OnInit {
 
-  constructor() { }
+  form: FormGroup
+  currentView: string
+  errBik: string
+  errAcc: string
+  agree: boolean
 
+  constructor(
+  ) {
+    this.form = new FormGroup({
+      bik: new FormControl('', [
+        Validators.required,
+        CustomValidators.validateBik
+      ]),
+      account: new FormControl('', [
+        Validators.required,
+        CustomValidators.validateRs
+      ]),
+      agree: new FormControl(false)
+    })
+    this.currentView = 'checkAcc'
+  }
+  
   ngOnInit(): void {
   }
 
+  iAgree() {
+    this.agree = !this.agree
+  }
+
+  confirm(): void {
+    console.log(this.form);
+  }
 }

@@ -1,21 +1,83 @@
-  <h1>Проверка счета</h1>
+<h1>Проверка счета</h1>
 
 <div class="layot-form">
-
-  <div class="toggler">
-    <div class="button-toggler">
-      О сервисе
-    </div>
-    <div class="button-toggler active">
-        Проверить счет
-    </div>
+<!-- toggler -->
+  <div class="toggler"
+        style="margin-bottom: 30px;"
+  >
+    <div class="button-toggler"
+        [class.active]="currentView === 'aboutUs'"
+        (click)="currentView = 'aboutUs'"
+    >О сервисе</div>
+    <div class="button-toggler"
+        [class.active]="currentView === 'checkAcc'"
+        (click)="currentView = 'checkAcc'"
+    >Проверить счет</div>
   </div>
 
-  <app-input-component></app-input-component>
-  <app-input-component></app-input-component>
-  <div style="width: 250px;">
-  <app-checkbox></app-checkbox>
+<!-- form -->
+<div *ngIf="currentView === 'checkAcc'">
+  <form [formGroup]="form" 
+        (ngSubmit)="confirm()"
+        style="display: flex;
+              flex-direction: column;
+        "
+  >    
+<!-- бик -->
+    <mat-form-field class="example-full-width" appearance="fill" style="margin-bottom: 10px;">
+      <mat-label>БИК</mat-label>
+      <input  matInput 
+              [formControlName]="'bik'" 
+      >
+      <mat-error *ngIf="form.controls.bik.hasError('required')">
+        <small>Обязательное поле</small>
+      </mat-error>
+      <mat-error *ngIf="form.controls.bik.hasError('validateBik')">
+        <small>{{form.controls.bik.errors.err}}</small>
+      </mat-error>
+    </mat-form-field>
+<!-- расчетны счет -->
+    <mat-form-field class="example-full-width" appearance="fill" style="margin-bottom: 10px;">
+      <mat-label>Расчетный счет</mat-label>
+      <input  matInput  
+              [formControlName]="'account'" 
+      >
+      <mat-error *ngIf="form.controls.account.hasError('required')">
+        <small>Обязательное поле</small>
+      </mat-error>
+      <mat-error *ngIf="form.controls.account.hasError('validateRs')">
+        <small>{{form.controls.account.errors.err}}</small>
+      </mat-error>
+    </mat-form-field>
+<!-- checkbox -->
+    <div style="width: 250px;">
+      <label class="check option">
+        <input class="check__input" 
+              type="checkbox" 
+              [formControlName]="'agree'" 
+              (click)="iAgree()"
+        >
+        <span class="check__box"></span>
+        <p class="check__text">Согласен с &nbsp;
+          <a [routerLink]="['/terms-of-use']">условиями</a>
+        </p>
+      </label>
+    </div>
+<!-- button submit -->
+    <button class="custom-button"
+            mat-raised-button
+            type="submit"
+            [disabled]="!agree || form.invalid"
+    >Проверить</button>
+  </form>
+</div>
+
+<!-- view about us -->
+  <div *ngIf="currentView === 'aboutUs'">
+    <p>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit doloremque magni tempora quibusdam, commodi non deleniti aut quos sunt voluptatem a officiis hic, alias nihil velit eius ipsam delectus repudiandae quae. Labore adipisci dolor, ipsa, voluptate ullam debitis temporibus similique omnis natus totam earum autem quidem amet deleniti possimus enim vero modi, tempore veniam ratione perferendis dicta eius? Perferendis magnam voluptatibus totam enim consequuntur quae itaque omnis! Repellendus earum vel similique, placeat laborum magnam commodi sunt dolor
+    </p>
   </div>
-  <app-button></app-button>
+
 
 </div>

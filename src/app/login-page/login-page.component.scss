@@ -18,9 +18,10 @@
   background: #FFFFFF;
   box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.08);
   border-radius: 100px;
-
-
+  
+  
   .button-toggler {
+    cursor: pointer;
     text-align: center;
     width: 260px;
     height: 40px;
@@ -34,5 +35,188 @@
     background: linear-gradient(292.85deg, #3A444E 1.13%, rgba(58, 68, 78, 0.78) 98.35%);
     box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.08);
     border-radius: 100px;
+    color: #FFFFFF;
   }
+
+  .example-form {
+    min-width: 150px;
+    max-width: 500px;
+    width: 100%;
+  }
+  
+  .example-full-width {
+    width: 100%;
+  }
+}
+
+
+
+
+.custom-button{
+  width: 248px;
+  height: 52px;
+  background: #00B1AB;
+  border-radius: 42px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: Corpid E1s;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 19px;
+  color: #FFFFFF;
+  cursor: pointer;
+  &:hover {
+  background: linear-gradient(180deg, #00B1AB 0%, #00827D 100%);
+  }
+  &:active {
+    transform: translateY(-1px);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  }
+}
+
+.custom-button.disabled {
+  background: #D0D5DB;
+}
+
+
+
+
+
+
+
+.inp {
+  position: relative;
+  margin: auto;
+  width: 100%;
+  width: 248px;
+  border-radius: 3px;
+  overflow: hidden;
+  border: 1px solid rgba(208, 213, 219, 0.5);
+  height: 52px;
+  border-radius: 4px;
+}
+.inp .label {
+  position: absolute;
+  top: 15px;
+  left: 12px;
+  font-size: 16px;
+  color: rgba(0, 0, 0, 0.5);
+  font-weight: 500;
+  transform-origin: 0 0;
+  transform: translate3d(0, 0, 0);
+  transition: all 0.2s ease;
+  pointer-events: none;
+}
+.inp .focus-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.05);
+  z-index: -1;
+  transform: scaleX(0);
+  transform-origin: left;
+}
+
+
+.inp input {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  width: 100%;
+  border: 0;
+  font-family: inherit;
+  padding: 16px 12px 0 12px;
+  height: 52px;
+  font-size: 16px;
+  font-weight: 400;
+  transition: all 0.15s ease;
+}
+
+.inp input:focus {
+  background: rgba(0, 0, 0, 0.05);
+  outline: none;
+}
+.inp input:focus + .label {
+  transform: translate3d(0, -12px, 0) scale(0.75);
+}
+.inp input:focus + .label + .focus-bg {
+  transform: scaleX(1);
+  transition: all 0.1s ease;
+}
+.validate{
+  margin-bottom: 8px;
+  font-family: Corpid E1s;
+  font-style: normal;
+  font-weight: 350;
+  font-size: 12px;
+  line-height: 14px;
+  display: flex;
+  align-items: center;
+  color: #F33F18;
+}
+
+.option {
+  display: block;
+  margin-bottom: 0.5em;
+}
+
+.check {
+  padding-left: 1.3em;
+}
+
+.check__input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+}
+
+.check__box {
+  position: absolute;
+  margin-top: 0.1em;
+  margin-left: -1.1em;
+  width: 0.7em;
+  height: 0.7em;
+  overflow: hidden;
+  border-radius: 0.05em;
+  background-color: white;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  box-shadow: 0 0 0 0.1em #4A90E2;
+}
+
+.check__input:checked + .check__box {
+  background-color: #4A90E2;
+  background-image: url(https://cdn.glitch.com/d6162378-5823-4160-a555-3d9789bd2b92%2Fcheck.svg?1550563475518);
+}
+
+.check__input:focus + .check__box {
+  box-shadow:
+      0 0 0 0.1em #4A90E2,
+      0 0 0 0.2em #7ED321;
+}
+
+.check__input:disabled + .check__box {
+  box-shadow: 0 0 0 0.1em #9B9B9B;
+}
+
+.check__input:checked:disabled + .check__box {
+  background-color: #9B9B9B;
+}
+
+.check__text {
+  font-family: Corpid E1s;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 12px;
+  line-height: 14px;
+  display: flex;
+  align-items: center;
+  color: #3A444E;
+  margin-top: 20px;
 }
