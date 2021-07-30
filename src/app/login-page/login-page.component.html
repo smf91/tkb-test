@@ -54,7 +54,6 @@
       <label class="check option">
         <input class="check__input" 
               type="checkbox" 
-              [formControlName]="'agree'" 
               (click)="iAgree()"
         >
         <span class="check__box"></span>
@@ -68,7 +67,8 @@
             mat-raised-button
             type="submit"
             [disabled]="!agree || form.invalid"
-    >Проверить</button>
+      >Проверить
+    </button>
   </form>
 </div>
 

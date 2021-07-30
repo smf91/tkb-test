@@ -11,8 +11,6 @@ export class LoginPageComponent implements OnInit {
 
   form: FormGroup
   currentView: string
-  errBik: string
-  errAcc: string
   agree: boolean
 
   constructor(
@@ -39,6 +37,11 @@ export class LoginPageComponent implements OnInit {
   }
 
   confirm(): void {
-    console.log(this.form);
+    alert('data is valid!')
   }
 }
+
+
+// валидные данные для проверки
+// 044525225
+// 30301810000006000001
